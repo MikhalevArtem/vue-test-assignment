@@ -1,16 +1,11 @@
 <template>
-  <div class="joke" v-for="joke in jokes">
-    <div>{{ joke.joke }}</div>
-    <div class="joke__buttons">
-      <styled-button class="like">Like!</styled-button>
-    </div>
-  </div>
+  <joke-item v-for="joke in jokes" :joke="joke" :key="joke.id" />
 </template>
 
 <script>
-import StyledButton from "./UI/StyledButton.vue";
+import JokeItem from "./JokeItem.vue";
 export default {
-  components: { StyledButton },
+  components: { JokeItem },
   props: {
     jokes: {
       type: Array,
@@ -20,17 +15,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.joke {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border: 2px solid #5562f5;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-.like {
-  align-self: flex-end;
-}
-</style>
+<style scoped></style>
