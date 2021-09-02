@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <styled-input placeholder="Введите слово для поиска среди анекдотов..." />
-    <joke-list :jokes="jokes" />
+    <joke-list :jokes="jokes" :likes="likes" @liked="likeJoke" />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
   },
   data() {
     return {
+      likes: new Set(),
       jokes: [
         {
           category: "Programming",
@@ -187,6 +188,24 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    likeJoke(id) {
+      this.likes.add(id);
+    },
+  },
+  mounted() {
+    if (localStorage.getItem("likes")) {
+      this.likes = new Set(JSON.parse(localStorage.getItem("likes")));
+    }
+  },
+  watch: {
+    likes: {
+      handler(newLikes) {
+        localStorage.setItem("likes", JSON.stringify(Array.from(newLikes)));
+      },
+      deep: true,
+    },
   },
 };
 </script>
