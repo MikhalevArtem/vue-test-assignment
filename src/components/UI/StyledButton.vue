@@ -13,5 +13,7 @@ export default {};
   border: 2px solid #5562f5;
   border-radius: 5px;
   color: #5562f5;
+  width: 100px;
+  height: 40px;
 }
 </style>

@@ -3,7 +3,7 @@
     <div>{{ joke.joke }}</div>
     <div class="joke__buttons">
       <styled-button class="like" @click="$emit('liked', joke.id)"
-        >Like!</styled-button
+        >Like</styled-button
       >
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   border: 2px solid #5562f5;
   margin-top: 10px;
   border-radius: 5px;

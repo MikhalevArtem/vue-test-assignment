@@ -28,6 +28,6 @@ export default {
 
 <style scoped>
 .liked-joke {
-  background-color: rgb(105, 230, 116);
+  background-color: rgb(217, 247, 219);
 }
 </style>
