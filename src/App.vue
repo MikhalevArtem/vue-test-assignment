@@ -1,14 +1,17 @@
 <template>
   <div class="app">
+    <styled-input placeholder="Введите слово для поиска среди анекдотов..." />
     <joke-list :jokes="jokes" />
   </div>
 </template>
 
 <script>
 import JokeList from "./components/JokeList.vue";
+import StyledInput from "./components/UI/StyledInput.vue";
 export default {
   components: {
     JokeList,
+    StyledInput,
   },
   data() {
     return {

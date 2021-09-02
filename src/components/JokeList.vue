@@ -2,7 +2,7 @@
   <div class="joke" v-for="joke in jokes">
     <div>{{ joke.joke }}</div>
     <div class="joke__buttons">
-      <styled-button>Like!</styled-button>
+      <styled-button class="like">Like!</styled-button>
     </div>
   </div>
 </template>
@@ -29,5 +29,8 @@ export default {
   border: 2px solid #5562f5;
   margin-top: 10px;
   border-radius: 5px;
+}
+.like {
+  align-self: flex-end;
 }
 </style>
